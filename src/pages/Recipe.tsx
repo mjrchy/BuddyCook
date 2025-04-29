@@ -34,7 +34,7 @@ const Recipe = () => {
     <div className="min-h-screen bg-white pb-16">
       <div className="h-64 relative">
         <img 
-          src={recipe.image} 
+          src={`/images/${recipe.image}`}
           alt={recipe.title} 
           className="w-full h-full object-cover"
         />

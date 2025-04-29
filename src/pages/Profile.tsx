@@ -33,7 +33,7 @@ const Profile = () => {
 
         <div className="flex flex-col items-center justify-center mb-8">
           <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mb-3">
-            <User size={40} className="text-gray-400" />
+            <img src='/images/aom.png' className="w-24 h-24 bg-gray-200 rounded-full"></img>
           </div>
           <h2 className="text-xl font-medium">{name}</h2>
         </div>

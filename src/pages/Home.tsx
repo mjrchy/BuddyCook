@@ -33,15 +33,15 @@ const Home = () => {
   const categories = ["Breakfast", "Lunch", "Dinner", "Bakery"];
 
   const filteredRecipes = searchQuery
-    ? recipes.filter(recipe => 
-        recipe.title.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+    ? recipes.filter(recipe =>
+      recipe.title.toLowerCase().includes(searchQuery.toLowerCase())
+    )
     : recipes;
 
   const recommendedRecipes = recipes
     .filter(recipe => {
       if (dietaryPreferences.length === 0) return true;
-      return dietaryPreferences.some(pref => 
+      return dietaryPreferences.some(pref =>
         recipe.dietaryTags.includes(pref)
       );
     })
@@ -52,15 +52,29 @@ const Home = () => {
       <div className="mb-6">
         <h2 className="text-lg font-semibold mb-3">Categories</h2>
         <div className="grid grid-cols-4 gap-3">
+          {/* {categories.map((category) => (
+            <div key={category} style={{
+              backgroundImage: `url(/images/${category}`
+            }} className="aspect-square flex items-center justify-center bg-gray-100 rounded-lg relative bg-cover bg-center" >
+              <span className="text-sm font-medium absolute">{category}</span>
+            </div>
+          ))} */}
           {categories.map((category) => (
-            <div key={category} className="aspect-square flex items-center justify-center bg-gray-100 rounded-lg">
-              <span className="text-sm font-medium">{category}</span>
+            <div
+              key={category}
+              className="aspect-square flex items-center justify-center bg-gray-200 rounded-lg relative overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+            >
+              {/* Using images from the public/images directory */}
+              <div
+                className="absolute inset-0 bg-cover bg-center opacity-70"
+                style={{ backgroundImage: `url(/images/${category.toLowerCase()}.jpg)` }}
+              />
+              <span className="text-sm font-medium absolute">{category}</span>
             </div>
           ))}
         </div>
       </div>
-
-      <div className="mb-6">
+      < div className="mb-6" >
         <div className="flex justify-between items-center mb-3">
           <h2 className="text-lg font-semibold">Recommendations for you</h2>
           <button className="text-sm text-indigo-600">See all</button>
@@ -70,7 +84,7 @@ const Home = () => {
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
         </div>
-      </div>
+      </div >
 
       <div className="mb-20">
         <div className="flex justify-between items-center mb-3">
@@ -119,7 +133,7 @@ const Home = () => {
             <h1 className="text-lg font-medium text-gray-900">Hello, {name}</h1>
             <p className="text-gray-600">What would you like to cook today?</p>
           </div>
-          <div className="w-10 h-10 bg-gray-200 rounded-full" />
+          <img src='/images/aom.png' className="w-10 h-10 bg-gray-200 rounded-full"></img>
         </div>
 
         <div className="relative mb-6">

@@ -17,7 +17,7 @@ const RecipeCard = ({ recipe, className }: RecipeCardProps) => {
     <div className={cn("relative rounded-lg overflow-hidden shadow-md bg-white", className)}>
       <div className="aspect-square relative">
         <img
-          src={recipe.image}
+          src={`/images/${recipe.image}`}
           alt={recipe.title}
           className="w-full h-full object-cover"
         />
