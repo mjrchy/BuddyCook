@@ -28,23 +28,25 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Routes>
-            {/* Onboarding Routes */}
-            <Route path="/" element={<Welcome />} />
-            <Route path="/onboarding/dietary-preferences" element={<DietaryPreferences />} />
-            <Route path="/onboarding/food-allergy" element={<FoodAllergy />} />
-            <Route path="/onboarding/cooking-experience" element={<CookingExperience />} />
-            <Route path="/onboarding/goal-setting" element={<GoalSetting />} />
-            
-            {/* Main App Routes */}
-            <Route path="/home" element={<Home />} />
-            <Route path="/bookmark" element={<Bookmark />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/recipe/:id" element={<Recipe />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <div className="max-w-[390px] w-full mx-auto bg-white min-h-screen shadow-lg overflow-hidden">
+          <BrowserRouter>
+            <Routes>
+              {/* Onboarding Routes */}
+              <Route path="/" element={<Welcome />} />
+              <Route path="/onboarding/dietary-preferences" element={<DietaryPreferences />} />
+              <Route path="/onboarding/food-allergy" element={<FoodAllergy />} />
+              <Route path="/onboarding/cooking-experience" element={<CookingExperience />} />
+              <Route path="/onboarding/goal-setting" element={<GoalSetting />} />
+
+              {/* Main App Routes */}
+              <Route path="/home" element={<Home />} />
+              <Route path="/bookmark" element={<Bookmark />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/recipe/:id" element={<Recipe />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
       </TooltipProvider>
     </UserProvider>
   </QueryClientProvider>

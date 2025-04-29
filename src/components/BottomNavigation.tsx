@@ -8,7 +8,7 @@ const BottomNavigation = () => {
   const path = location.pathname;
 
   return (
-    <div className="fixed bottom-0 w-full bg-white shadow-lg border-t border-gray-200 h-16 flex items-center justify-around">
+    <div className="max-w-[390px] w-full mx-auto fixed bottom-0 bg-white shadow-lg border-t border-gray-200 h-16 flex items-center justify-around">
       <Link 
         to="/home" 
         className={cn(
